@@ -1,0 +1,11 @@
+lane :test do
+  screenshotbot_installer
+
+  screenshotbot(
+    channel: ENV["BITRISE_APP_TITLE"],
+    repo_url: ENV["GIT_REPOSITORY_URL"],
+    is_pr: true,
+    pr_destination: ENV["BITRISEIO_GIT_BRANCH_DEST"],
+    screenshots_directory: ENV["BITRISE_DEPLOY_DIR"]
+  )
+end
