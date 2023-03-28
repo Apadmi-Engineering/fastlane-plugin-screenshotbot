@@ -1,5 +1,4 @@
 require 'fastlane/action'
-require_relative '../helper/screenshotbot_helper'
 
 module Fastlane
   module Actions

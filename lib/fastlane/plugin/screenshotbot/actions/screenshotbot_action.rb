@@ -1,5 +1,4 @@
 require 'fastlane/action'
-require_relative '../helper/screenshotbot_helper'
 
 module Fastlane
   module Actions
@@ -31,14 +30,14 @@ module Fastlane
           "--#{cli_mapping[k]} #{v}"
         end
 
-        command = "#{File.expand_path(params[:runner_path])} #{command_params.join(' ')}"
+        command = "#{File.expand_path(params[:recorder_path])} #{command_params.join(' ')}"
         Actions.sh(command)
       rescue StandardError => e
         UI.crash!("Error running Screenshotbot: #{e.message}")
       end
 
       def self.description
-        "Installs (if needed) and uploads screenshots to screenshotbot"
+        "Uploads screenshots to Screenshotbot"
       end
 
       def self.authors
@@ -47,9 +46,9 @@ module Fastlane
 
       def self.available_options
         [
-          FastlaneCore::ConfigItem.new(key: :runner_path,
-                                       description: "The path to the Screenshotbot runner executable",
-                                       env_name: "SCREENSHOTBOT_RUNNER_PATH",
+          FastlaneCore::ConfigItem.new(key: :recorder_path,
+                                       description: "The path to the Screenshotbot recorder executable",
+                                       env_name: "SCREENSHOTBOT_RECORDER_PATH",
                                        type: String,
                                        default_value: "~/screenshotbot/recorder",
                                        optional: true),
