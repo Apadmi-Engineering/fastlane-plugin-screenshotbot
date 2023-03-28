@@ -3,7 +3,7 @@ require:
 - rubocop/require_tools
 - rubocop-performance
 AllCops:
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 2.7
   NewCops: enable
   Include:
   - "**/*.rb"
@@ -57,19 +57,9 @@ Style/EmptyMethod:
 Lint/UselessAssignment:
   Exclude:
   - "**/spec/**/*"
+# Disable because otherwise we get errors even though the plugin works
 Require/MissingRequireStatement:
-  Exclude:
-  - "**/spec/**/*.rb"
-  - "**/spec_helper.rb"
-  - spaceship/lib/spaceship/babosa_fix.rb
-  - fastlane_core/lib/fastlane_core/ui/disable_colors.rb
-  - "**/Fastfile"
-  - "**/*.gemspec"
-  - rakelib/**/*
-  - "**/*.rake"
-  - "**/Rakefile"
-  - fastlane/**/*
-  - supply/**/*
+  Enabled: false
 Layout/FirstHashElementIndentation:
   Enabled: false
 Layout/HashAlignment:

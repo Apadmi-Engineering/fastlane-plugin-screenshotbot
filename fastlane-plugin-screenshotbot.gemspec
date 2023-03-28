@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.author        = 'Apadmi Limited'
   spec.email         = 'opensource@apadmi.com'
 
-  spec.summary       = 'Screenshotbot'
+  spec.summary       = 'Fastlane pluging to install the Screenshotbot recorder tool and upload your screenshots'
   spec.homepage      = "https://github.com/Apadmi-Engineering/fastlane-plugin-screenshotbot"
   spec.license       = "MIT"
 

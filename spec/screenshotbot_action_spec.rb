@@ -2,7 +2,7 @@ describe Fastlane::Actions::ScreenshotbotAction do
   describe '#run' do
     it 'executes for a standard run' do
       params = {
-        runner_path: "~/screenshotbot/recorder",
+        recorder_path: "/path/to/runner",
         is_pr: false,
         screenshots_directory: "testdir",
         git_branch: "test",
@@ -16,13 +16,13 @@ describe Fastlane::Actions::ScreenshotbotAction do
       allow(response).to receive(:success?).and_return(true)
 
       expect(Fastlane::Actions).to receive(:sh)
-        .with("/Users/mattm/screenshotbot/recorder --main-branch test --directory testdir --channel testchannel --api-key apikeytest --api-secret apisecrettest --repo-url testrepourl")
+        .with("/path/to/runner --main-branch test --directory testdir --channel testchannel --api-key apikeytest --api-secret apisecrettest --repo-url testrepourl")
       Fastlane::Actions::ScreenshotbotAction.run(params)
     end
 
-    it 'executes for a standard PR' do
+    it 'executes for a PR' do
       params = {
-        runner_path: "~/screenshotbot/recorder",
+        recorder_path: "/path/to/runner",
         is_pr: true,
         screenshots_directory: "testdir",
         pr_destination: "testpr",
@@ -36,7 +36,7 @@ describe Fastlane::Actions::ScreenshotbotAction do
       allow(response).to receive(:success?).and_return(true)
 
       expect(Fastlane::Actions).to receive(:sh)
-        .with("/Users/mattm/screenshotbot/recorder --main-branch testpr --directory testdir --channel testchannel --api-key apikeytest --api-secret apisecrettest --repo-url testrepourl")
+        .with("/path/to/runner --main-branch testpr --directory testdir --channel testchannel --api-key apikeytest --api-secret apisecrettest --repo-url testrepourl")
       Fastlane::Actions::ScreenshotbotAction.run(params)
     end
   end
