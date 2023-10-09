@@ -1,4 +1,16 @@
-lane :test do
+lane :main_branch do
+  screenshotbot_installer
+
+  screenshotbot(
+    channel: ENV.fetch("BITRISE_APP_TITLE", nil),
+    repo_url: ENV.fetch("GIT_REPOSITORY_URL", nil),
+    is_pr: false,
+    git_branch: ENV.fetch("BITRISE_GIT_BRANCH", nil),
+    screenshots_directory: ENV.fetch("BITRISE_DEPLOY_DIR", nil)
+  )
+end
+
+lane :pull_request do
   screenshotbot_installer
 
   screenshotbot(
