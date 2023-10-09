@@ -2,8 +2,10 @@
 require:
 - rubocop/require_tools
 - rubocop-performance
+- rubocop-rspec
+- rubocop-rake
 AllCops:
-  TargetRubyVersion: 2.7
+  TargetRubyVersion: 3.0
   NewCops: enable
   Include:
   - "**/*.rb"
@@ -154,7 +156,7 @@ Style/CollectionMethods:
   Enabled: false
 Style/MethodCallWithArgsParentheses:
   Enabled: true
-  IgnoredMethods:
+  AllowedMethods:
   - require
   - require_relative
   - fastlane_require
@@ -176,3 +178,13 @@ Style/MethodCallWithArgsParentheses:
   - context
   - before
   - after
+RSpec/DescribedClass:
+  Enabled: false
+RSpec/FilePath:
+  Enabled: false
+RSpec/SpecFilePathFormat:
+  Enabled: false
+RSpec/ExampleLength:
+  Max: 20
+RSpec/MessageSpies:
+  EnforcedStyle: receive
