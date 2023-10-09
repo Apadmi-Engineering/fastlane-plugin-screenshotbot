@@ -30,6 +30,10 @@ module Fastlane
           "--#{cli_mapping[k]} #{v}"
         end
 
+        if !params[:runner_args].nil? && !params[:runner_args].empty?
+          command_params << params[:runner_args]
+        end
+
         command = "#{File.expand_path(params[:recorder_path])} #{command_params.join(' ')}"
         Actions.sh(command)
       rescue StandardError => e
@@ -91,7 +95,11 @@ module Fastlane
                                        description: "The current git branch",
                                        env_name: "SCREENSHOTBOT_CURRENT_BRANCH",
                                        type: String,
-                                       optional: false)
+                                       optional: false),
+          FastlaneCore::ConfigItem.new(key: :runner_args,
+                                       description: "Extra command line args to be passed to the runner",
+                                       type: String,
+                                       optional: true)
         ]
       end
 
