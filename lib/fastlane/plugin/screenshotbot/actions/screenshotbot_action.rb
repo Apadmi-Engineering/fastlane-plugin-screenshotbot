@@ -10,7 +10,8 @@ module Fastlane
           channel: "channel",
           api_key: "api-key",
           api_secret: "api-secret",
-          repo_url: "repo-url"
+          repo_url: "repo-url",
+          api_hostname: "api-hostname"
         }
 
         command_params = {}
@@ -24,6 +25,7 @@ module Fastlane
         command_params[:api_key] = params[:api_key]
         command_params[:api_secret] = params[:api_secret]
         command_params[:repo_url] = params[:repo_url]
+        command_params[:api_hostname] = params[:api_hostname]
 
         command_params = command_params.compact
         command_params = command_params.map do |k, v|
@@ -89,6 +91,10 @@ module Fastlane
           FastlaneCore::ConfigItem.new(key: :pr_destination,
                                        description: "Pull request destination branch (required if is_pr is true)",
                                        env_name: "SCREENSHOTBOT_PR_DESTINATION_BRANCH",
+                                       type: String,
+                                       optional: true),
+          FastlaneCore::ConfigItem.new(key: :api_hostname,
+                                       description: "Alternative API hostname",
                                        type: String,
                                        optional: true),
           FastlaneCore::ConfigItem.new(key: :git_branch,

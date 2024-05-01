@@ -60,5 +60,20 @@ describe Fastlane::Actions::ScreenshotbotAction do
         .with("/path/to/runner --main-branch test --directory testdir --channel testchannel --api-key apikeytest --api-secret apisecrettest --repo-url testrepourl --extra-params --more-extra-params")
       Fastlane::Actions::ScreenshotbotAction.run(params)
     end
+
+    it 'executes with hostname' do
+      params = {
+        recorder_path: "/path/to/runner",
+        is_pr: false,
+        api_hostname: "https://test.com"
+      }
+
+      response = instance_double(Process::Status)
+      allow(response).to receive(:success?).and_return(true)
+
+      expect(Fastlane::Actions).to receive(:sh)
+        .with("/path/to/runner --api-hostname https://test.com")
+      Fastlane::Actions::ScreenshotbotAction.run(params)
+    end
   end
 end
