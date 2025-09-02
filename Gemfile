@@ -5,7 +5,7 @@ gemspec
 plugins_path = File.join(File.dirname(__FILE__), 'fastlane', 'Pluginfile')
 eval_gemfile(plugins_path) if File.exist?(plugins_path)
 
-gem 'bundler', '~> 2.5', '>= 2.5.9'
+gem 'bundler', '~> 2.4', '>= 2.4.1'
 gem 'pry', '~> 0.14.2'
 gem 'rake', '~> 13.2', '>= 13.2.1'
 gem 'rspec', '~> 3.13'
