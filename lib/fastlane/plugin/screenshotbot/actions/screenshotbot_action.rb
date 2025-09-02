@@ -95,6 +95,7 @@ module Fastlane
                                        optional: true),
           FastlaneCore::ConfigItem.new(key: :api_hostname,
                                        description: "Alternative API hostname",
+                                       env_name: "SCREENSHOTBOT_API_HOST",
                                        type: String,
                                        optional: true),
           FastlaneCore::ConfigItem.new(key: :git_branch,
