@@ -1,6 +1,6 @@
 # Fastlane Screenshotbot Plugin
 
-[![fastlane Plugin Badge](https://rawcdn.githack.com/fastlane/fastlane/master/fastlane/assets/plugin-badge.svg)](https://rubygems.org/gems/fastlane-plugin-screenshotbot)
+[![fastlane Plugin Badge](https://img.shields.io/gem/v/fastlane-plugin-screenshotbot.svg?style=flat)](https://rubygems.org/gems/fastlane-plugin-screenshotbot)
 
 Fastlane plugin to upload screenshots to Screenshotbot for visual testing.
 
@@ -84,8 +84,3 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Authors
-
-- Sam Clements (@samdc)
-- Matt Massicotte (@mattm)
