@@ -17,6 +17,7 @@ jobs:
     - uses: ruby/setup-ruby@v1
       with:
         bundler-cache: true 
+        bundler: '4.0.6'
     - name: Publish to RubyGems
       run: |
         mkdir -p $HOME/.gem
