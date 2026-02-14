@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 3.2'
 
-  spec.add_dependency('fastlane', '>= 2.231.1')
+  spec.add_dependency('fastlane', '>= 2.232.1')
 
   spec.metadata['rubygems_mfa_required'] = 'true'
 end
