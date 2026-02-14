@@ -15,9 +15,9 @@ Gem::Specification.new do |spec|
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)
   spec.require_paths = ['lib']
 
-  spec.required_ruby_version = '>= 3.0'
+  spec.required_ruby_version = '>= 3.2'
 
-  spec.add_dependency('fastlane', '>= 2.220.0')
+  spec.add_dependency('fastlane', '>= 2.231.1')
 
   spec.metadata['rubygems_mfa_required'] = 'true'
 end
