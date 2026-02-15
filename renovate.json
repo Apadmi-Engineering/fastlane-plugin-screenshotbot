@@ -1,0 +1,17 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "enabledManagers": [
+    "github-actions",
+    "bundler"
+  ],
+  "packageRules": [
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "Github Actions"
+    },
+    {
+      "matchManagers": ["bundler"],
+      "groupName": "Ruby gems"
+    }
+  ]
+}
