@@ -1,8 +1,8 @@
 name: Ruby Gem
 
 on:
-  push:
-    branches: [ "main" ]
+  release:
+    types: [published]
 
 jobs:
   build:
@@ -13,10 +13,11 @@ jobs:
       packages: write
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
     - uses: ruby/setup-ruby@v1
       with:
         bundler-cache: true 
+        bundler: '4.0.6'
     - name: Publish to RubyGems
       run: |
         mkdir -p $HOME/.gem
