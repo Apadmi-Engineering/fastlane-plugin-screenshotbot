@@ -19,7 +19,7 @@ jobs:
           repositories: 'fastlane-plugin-screenshotbot'
       
       - name: Checkout
-        uses: actions/checkout@v6.0.2
+        uses: actions/checkout@v7.0.1
 
       - name: Renovate Bot GitHub Action
         uses: renovatebot/github-action@d65ef9e20512193cc070238b49c3873a361cd50c
