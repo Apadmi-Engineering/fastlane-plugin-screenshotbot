@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)
   spec.require_paths = ['lib']
 
-  spec.required_ruby_version = '>= 3.2'
+  spec.required_ruby_version = '>= 3.3'
 
   spec.add_dependency('fastlane', '>= 2.232.1')
 
